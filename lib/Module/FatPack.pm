@@ -134,7 +134,6 @@ _
         # XXX strip_log_levels
 
     },
-    result_naked => 1,
 };
 sub fatpack_modules {
     my %args = @_;
@@ -222,7 +221,18 @@ unshift @INC, bless \%fatpacked, $class;
   } # END OF FATPACK CODE
 _
 
-    join("", @res);
+    if ($args{output}) {
+        my $outfile = $args{output};
+        if (-f $outfile) {
+            return [409, "Won't overwrite existing file '$outfile'"]
+                unless $args{overwrite};
+        }
+        open my($fh), ">", $outfile or die "Can't write to '$outfile': $!";
+        print $fh join("", @res);
+        return [200, "OK, written to '$outfile'"];
+    } else {
+        return [200, "OK", join("", @res)];
+    }
 }
 
 1;
