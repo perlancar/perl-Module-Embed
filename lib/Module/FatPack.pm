@@ -30,7 +30,7 @@ a file or string.
 _
     args_rels => {
         choose_one => ['module_names', 'module_srcs'],
-        'dep_one&' => [
+        'dep_any&' => [
             [stripper_maintain_linum => ['stripper']],
             [stripper_ws             => ['stripper']],
             [stripper_comment        => ['stripper']],
