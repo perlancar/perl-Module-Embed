@@ -70,9 +70,8 @@ _
 
         assume_strict => {
             summary => 'Assume code runs under stricture',
-            schema => 'str*',
+            schema => 'bool',
             default => 1,
-            cmdline_aliases => {o=>{}},
         },
 
         stripper => {
