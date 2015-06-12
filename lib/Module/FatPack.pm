@@ -43,6 +43,8 @@ _
             summary => 'Module names to search',
             schema  => ['array*', of=>['str*', match=>$mod_re], min_len=>1],
             tags => ['category:input'],
+            pos => 0,
+            greedy => 1,
         },
         module_srcs => {
             summary => 'Module source codes',
@@ -54,16 +56,23 @@ _
             tags => ['category:input'],
         },
         output => {
-            schema => 'str*',
             summary => 'Output filename',
+            schema => 'str*',
             cmdline_aliases => {o=>{}},
             tags => ['category:output'],
         },
         overwrite => {
-            schema => [bool => default => 0],
             summary => 'Whether to overwrite output if previously exists',
             'summary.alt.bool.yes' => 'Overwrite output if previously exists',
+            schema => [bool => default => 0],
             tags => ['category:output'],
+        },
+
+        assume_strict => {
+            summary => 'Assume code runs under stricture',
+            schema => 'str*',
+            default => 1,
+            cmdline_aliases => {o=>{}},
         },
 
         stripper => {
@@ -189,7 +198,12 @@ sub fatpack_modules {
 s/^  //mg for values %fatpacked;
 
 my $class = 'FatPacked::'.(0+\%fatpacked);
+_
+
+    push @res, <<'_' if $args{assume_strict} // 1;
 no strict 'refs';
+_
+    push @res, <<'_';
 *{"${class}::files"} = sub { keys %{$_[0]} };
 
 if ($] < 5.008) {
