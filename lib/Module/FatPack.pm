@@ -49,7 +49,7 @@ _
             cmdline_aliases => {m=>{}},
         },
         module_srcs => {
-            summary => 'Module source codes',
+            summary => 'Module source codes (a hash, keys are module names)',
             schema  => ['hash*', {
                 each_key=>['str*', match=>$mod_re],
                 each_value=>['str*'],
