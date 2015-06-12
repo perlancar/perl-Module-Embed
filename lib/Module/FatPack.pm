@@ -29,7 +29,7 @@ a file or string.
 
 _
     args_rels => {
-        choose_one => ['module_names', 'module_srcs'],
+        req_one => ['module_names', 'module_srcs'],
         'dep_any&' => [
             [stripper_maintain_linum => ['stripper']],
             [stripper_ws             => ['stripper']],
@@ -45,6 +45,7 @@ _
             tags => ['category:input'],
             pos => 0,
             greedy => 1,
+            'x.schema.entity' => 'modulename',
         },
         module_srcs => {
             summary => 'Module source codes',
@@ -60,6 +61,7 @@ _
             schema => 'str*',
             cmdline_aliases => {o=>{}},
             tags => ['category:output'],
+            'x.schema.entity' => 'filename',
         },
         overwrite => {
             summary => 'Whether to overwrite output if previously exists',
