@@ -46,6 +46,7 @@ _
             pos => 0,
             greedy => 1,
             'x.schema.element_entity' => 'modulename',
+            cmdline_aliases => {m=>{}},
         },
         module_srcs => {
             summary => 'Module source codes',
@@ -56,6 +57,17 @@ _
             }],
             tags => ['category:input'],
         },
+        preamble => {
+            summary => 'Perl source code to add before the fatpack code',
+            schema => 'str*',
+            tags => ['category:input'],
+        },
+        postamble => {
+            summary => 'Perl source code to add after the fatpack code',
+            schema => 'str*',
+            tags => ['category:input'],
+        },
+
         output => {
             summary => 'Output filename',
             schema => 'str*',
@@ -186,6 +198,7 @@ sub fatpack_modules {
 
     my @res;
 
+    push @res, $args{preamble} if defined $args{preamble};
     push @res, 'BEGIN {', "\n";
     push @res, 'my %fatpacked;', "\n\n";
     for my $mod_pm (sort keys %module_srcs) {
@@ -235,6 +248,7 @@ else {
 unshift @INC, bless \%fatpacked, $class;
   } # END OF FATPACK CODE
 _
+    push @res, $args{postamble} if defined $args{postamble};
 
     if ($args{output}) {
         my $outfile = $args{output};
