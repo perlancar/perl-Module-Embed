@@ -1,5 +1,10 @@
 Revision history for Module-FatPack
 
+0.04    2015-06-12 (PERLANCAR)
+
+	- Add options 'preamble' and 'postamble'.
+
+
 0.03     2015-06-12 (PERLANCAR)
 
          - No functional changes.
