@@ -1,5 +1,12 @@
 Revision history for Module-FatPack
 
+0.03     2015-06-12 (PERLANCAR)
+
+         - No functional changes.
+
+         - Minor fix to Rinci metadata
+
+
 0.02     2015-06-12 (PERLANCAR)
 
          - Add option 'assume_strict'.
