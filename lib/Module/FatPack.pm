@@ -45,7 +45,7 @@ _
             tags => ['category:input'],
             pos => 0,
             greedy => 1,
-            'x.schema.entity' => 'modulename',
+            'x.schema.element_entity' => 'modulename',
         },
         module_srcs => {
             summary => 'Module source codes',
