@@ -270,3 +270,5 @@ _
 =head1 SEE ALSO
 
 L<App::FatPack>, L<App::fatten>
+
+L<fatpack-modules>, CLI for C<fatpack_modules>
