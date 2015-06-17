@@ -1,5 +1,13 @@
 Revision history for Module-FatPack
 
+0.06    2015-06-17 (PERLANCAR)
+
+	- No functional changes.
+
+	- Use stripper args from PERLANCAR::AppUtil::PerlStripper to remove
+	  duplication.
+
+
 0.05    2015-06-17 (PERLANCAR)
 
 	- No functional changes.
