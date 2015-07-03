@@ -1,5 +1,11 @@
 Revision history for Module-FatPack
 
+0.07    2015-07-03 (PERLANCAR)
+
+	- Accept Foo/Bar.pm or Foo::Bar syntax in module_names &
+	  module_srcs.
+
+
 0.06    2015-06-17 (PERLANCAR)
 
 	- No functional changes.
