@@ -1,5 +1,13 @@
 Revision history for Module-FatPack
 
+0.09    2015-10-03 (PERLANCAR)
+
+	- No functional changes.
+
+	- Update mentioned module App::fatten (has been renamed to
+	  App::depak).
+
+
 0.08    2015-09-03 (PERLANCAR)
 
 	- No functional changes.
