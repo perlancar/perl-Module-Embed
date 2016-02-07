@@ -84,6 +84,15 @@ _
         },
 
     },
+    examples => [
+        {
+            summary => 'Fatpack two modules',
+            src => 'fatpack-modules Text::Table::Tiny Try::Tiny',
+            src_plang => 'bash',
+            test => 0,
+            'x.doc.show_result' => 0,
+        },
+    ],
 };
 sub fatpack_modules {
     my %args = @_;
@@ -199,6 +208,8 @@ require PERLANCAR::AppUtil::PerlStripper; PERLANCAR::AppUtil::PerlStripper::_add
 
 =head1 SEE ALSO
 
-L<App::FatPack>, L<App::depak>
+L<App::FatPack>, the original implementation.
+
+L<App::depak> for more options e.g. strip the source codes first, use various tracing methods, etc.
 
 L<fatpack-modules>, CLI for C<fatpack_modules>
