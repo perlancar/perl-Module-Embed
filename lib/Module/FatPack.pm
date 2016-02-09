@@ -210,6 +210,6 @@ require PERLANCAR::AppUtil::PerlStripper; PERLANCAR::AppUtil::PerlStripper::_add
 
 L<App::FatPack>, the original implementation.
 
-L<App::depak> for more options e.g. strip the source codes first, use various tracing methods, etc.
+L<App::depak> for more options e.g. use various tracing methods, etc.
 
 L<fatpack-modules>, CLI for C<fatpack_modules>
