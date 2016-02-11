@@ -13,8 +13,8 @@ our @EXPORT_OK = qw(fatpack_modules);
 
 our %SPEC;
 
-my $mod_re    = qr/\A[A-Za-z_][A-Za-z0-9_]*(::[A-Za-z_][A-Za-z0-9_]*)*\z/;
-my $mod_pm_re = qr!\A[A-Za-z_][A-Za-z0-9_]*(/[A-Za-z_][A-Za-z0-9_]*)*\.pm\z!;
+my $mod_re    = qr/\A[A-Za-z_][A-Za-z0-9_]*(::[A-Za-z0-9_]+)*\z/;
+my $mod_pm_re = qr!\A[A-Za-z_][A-Za-z0-9_]*(/[A-Za-z0-9_]+)*\.pm\z!;
 
 $SPEC{fatpack_modules} = {
     v => 1.1,
