@@ -1,5 +1,12 @@
 Revision history for Module-FatPack
 
+0.11    2016-12-11 (PERLANCAR)
+
+	- Tweak Rinci metadata for nicer CLI.
+
+	- Fix module regex (subpackages are allowed to begin with a digit).
+
+
 0.10    2016-02-09 (PERLANCAR)
 
 	- No functional changes.
