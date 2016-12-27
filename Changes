@@ -1,5 +1,11 @@
 Revision history for Module-FatPack
 
+0.12    2016-12-27 (PERLANCAR)
+
+	- Add options: --pm, --line-prefix, --put-hook-at-the-end,
+	  --add-begin-block.
+
+
 0.11    2016-12-11 (PERLANCAR)
 
 	- Tweak Rinci metadata for nicer CLI.
