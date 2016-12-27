@@ -1,5 +1,10 @@
 Revision history for Module-FatPack
 
+0.13    2016-12-27 (PERLANCAR)
+
+	- [Bugfix] Fix operator precedence.
+
+
 0.12    2016-12-27 (PERLANCAR)
 
 	- Add options: --pm, --line-prefix, --put-hook-at-the-end,
