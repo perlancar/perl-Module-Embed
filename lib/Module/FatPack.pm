@@ -126,9 +126,9 @@ sub fatpack_modules {
     my %args = @_;
 
     my $pm = $args{pm};
-    my $line_prefix = $args{line_prefix} // $pm ? '#':'  ';
-    my $add_begin_block = $args{add_begin_block} // $pm ? 0:1;
-    my $put_hook_at_the_end = $args{put_hook_at_the_end} // $pm ? 1:0;
+    my $line_prefix = $args{line_prefix} // ($pm ? '#':'  ');
+    my $add_begin_block = $args{add_begin_block} // ($pm ? 0:1);
+    my $put_hook_at_the_end = $args{put_hook_at_the_end} // ($pm ? 1:0);
 
     my %module_srcs; # key: mod_pm
     my %fatpack_keys;
