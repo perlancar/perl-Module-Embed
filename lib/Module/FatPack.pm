@@ -175,7 +175,8 @@ sub fatpack_modules {
     if ($add_begin_block) {
         push @res, 'BEGIN {', "\n";
     } else {
-        push @res, "# BEGIN FATPACK CODE\n{\n";
+        push @res, "# BEGIN FATPACK CODE: ".join(" ", sort keys %fatpack_keys)."\n";
+        push @res, "{\n";
     }
     push @res, <<'_' if $args{assume_strict} // 1;
     no strict 'refs';
@@ -239,7 +240,8 @@ _
     unshift @INC, $hook unless grep {ref($_) && "$_" eq "$hook"} @INC;
 _
     }
-    push @res, "} # END OF FATPACK CODE\n\n";
+    push @res, "}\n";
+    push @res, "# END OF FATPACK CODE\n\n";
     push @res, $args{postamble} if defined $args{postamble};
 
     if ($args{output}) {
