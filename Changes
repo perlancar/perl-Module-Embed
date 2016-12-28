@@ -1,5 +1,14 @@
 Revision history for Module-FatPack
 
+0.15    2016-12-28 (PERLANCAR)
+
+	- [Bugfix] Avoid perl redefine warning.
+
+	- [Bugfix] Make sure embedded source code ends with newline.
+
+	- Add some tests.
+
+
 0.14    2016-12-28 (PERLANCAR)
 
 	- No functional changes.
