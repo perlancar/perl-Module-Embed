@@ -204,27 +204,29 @@ _
 #_
 
     my $hook_src = <<'_';
-    if ($] < 5.008) {
-        *{"${class}::INC"} = sub {
-            if (my $fat = $_[0]{$_[1]}) {
-                return sub {
-                    return 0 unless length $fat;
-                    $fat =~ s/^([^\n]*\n?)//;
-                    $_ = $1;
-                    return 1;
-                };
-            }
-            return;
-        };
-    } else {
-        *{"${class}::INC"} = sub {
-            if (my $fat = $_[0]{$_[1]}) {
-                open my $fh, '<', \$fat
-                    or die "FatPacker error loading $_[1] (could be a perl installation issue?)";
-                return $fh;
-            }
-            return;
-        };
+    unless (defined &{"${class}::INC"}) {
+        if ($] < 5.008) {
+            *{"${class}::INC"} = sub {
+                if (my $fat = $_[0]{$_[1]}) {
+                    return sub {
+                        return 0 unless length $fat;
+                        $fat =~ s/^([^\n]*\n?)//;
+                        $_ = $1;
+                        return 1;
+                    };
+                }
+                return;
+            };
+        } else {
+            *{"${class}::INC"} = sub {
+                if (my $fat = $_[0]{$_[1]}) {
+                    open my $fh, '<', \$fat
+                        or die "FatPacker error loading $_[1] (could be a perl installation issue?)";
+                    return $fh;
+                }
+                return;
+            };
+        }
     }
 _
     if ($pm) { $hook_src =~ s/\R\s+/ /g }
