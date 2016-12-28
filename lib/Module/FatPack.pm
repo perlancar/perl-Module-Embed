@@ -186,6 +186,7 @@ _
         push @res, '    $main::fatpacked{"', $mod_pm, '"} = \'' . $line_prefix . q|#line '.(1+__LINE__).' "'.__FILE__."\"\n".<<'|, $label, "';\n";
         $module_srcs{$mod_pm} =~ s/^/$line_prefix/gm;
         push @res, $module_srcs{$mod_pm};
+        push @res, "\n" unless $module_srcs{$mod_pm} =~ /\R\z/;
         push @res, "$label\n\n";
     }
     if ($pm) {
