@@ -1,5 +1,11 @@
 Revision history for Module-FatPack
 
+0.16    2016-12-29 (PERLANCAR)
+
+	- [Bugfix] Fix Rinci metadata to make line prefix defaults to '#'
+	  when --pm is specified.
+
+
 0.15    2016-12-28 (PERLANCAR)
 
 	- [Bugfix] Avoid perl redefine warning.
