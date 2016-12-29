@@ -88,7 +88,6 @@ _
         },
         line_prefix => {
             schema => ['str*', min_len => 1],
-            default => '  ',
         },
         put_hook_at_the_end => {
             summary => 'Put the require hook at the end of @INC using "push" '.
