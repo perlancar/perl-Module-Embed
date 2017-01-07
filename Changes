@@ -1,5 +1,3 @@
-Revision history for Module-FatPack
-
 0.16    2016-12-29 (PERLANCAR)
 
 	- [Bugfix] Fix Rinci metadata to make line prefix defaults to '#'
