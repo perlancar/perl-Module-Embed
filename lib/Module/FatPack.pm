@@ -21,11 +21,11 @@ $SPEC{fatpack_modules} = {
     summary => 'Generate source code that contains fatpacked modules',
     description => <<'_',
 
-This routine provides the same core technique employed by `App::Fatpack` (which
-is putting modules' source code inside Perl variables and loading them on-demand
-via require hook) without all the other stuffs. All you need is supply the names
-of modules (or the modules' source code themselves) and you'll get the output in
-a file or string.
+This routine provides the same core technique employed by `App::FatPacker`
+(which is putting modules' source code inside Perl variables and loading them
+on-demand via require hook) without all the other stuffs. All you need is supply
+the names of modules (or the modules' source code themselves) and you'll get the
+output in a file or string.
 
 _
     args_rels => {
@@ -267,7 +267,7 @@ require PERLANCAR::AppUtil::PerlStripper; PERLANCAR::AppUtil::PerlStripper::_add
 
 =head1 SEE ALSO
 
-L<App::FatPack>, the original implementation.
+L<App::FatPacker>, the original implementation.
 
 L<App::depak> for more options e.g. use various tracing methods, etc.
 
