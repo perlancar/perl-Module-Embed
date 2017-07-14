@@ -1,3 +1,10 @@
+0.17    2017-07-14 (PERLANCAR)
+
+	- No functional changes.
+
+	- [doc] Fix link to the original implementation App::FatPack*er*.
+
+
 0.16    2016-12-29 (PERLANCAR)
 
 	- [Bugfix] Fix Rinci metadata to make line prefix defaults to '#'
