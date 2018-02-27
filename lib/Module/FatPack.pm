@@ -272,3 +272,9 @@ L<App::FatPacker>, the original implementation.
 L<App::depak> for more options e.g. use various tracing methods, etc.
 
 L<fatpack-modules>, CLI for C<fatpack_modules>
+
+L<Module::DataPack>, which implements an alternative technique to fatpacking
+called datapacking. The modules are embedded not in a variable in Perl code
+(which still needs to be parsed by perl), but instead in the __DATA__ section
+(whch does not need to be parsed by perl). A script with lots of modules to
+embed can benefit from datapacking technique and lower its startup overhead.
