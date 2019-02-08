@@ -84,7 +84,7 @@ _
         assume_strict => {
             summary => 'Assume code runs under stricture',
             schema => 'bool',
-            default => 1,
+            default => 0,
         },
         line_prefix => {
             schema => ['str*', min_len => 1],
@@ -177,7 +177,7 @@ sub fatpack_modules {
         push @res, "# BEGIN FATPACK CODE: ".join(" ", sort keys %fatpack_keys)."\n";
         push @res, "{\n";
     }
-    push @res, <<'_' if $args{assume_strict} // 1;
+    push @res, <<'_' if $args{assume_strict} // 0;
     no strict 'refs';
 _
     for my $mod_pm (sort keys %module_srcs) {
