@@ -1,3 +1,9 @@
+0.182   2020-01-03  Released-By: PERLANCAR; Urgency: low
+
+	- [test] Use a more proper example module name prefixed with
+	  Module::FatPack::Test:: [RT#131338].
+
+
 0.181   2019-02-08  Released-By: PERLANCAR
 
 	- Change default assume_strict to 0.
